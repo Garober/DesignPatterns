@@ -1,0 +1,28 @@
+Factory method
+
+Is a creation design pattern that provides an interface for creating objects in a superclass, 
+but allow subclasses to alter the type of objects that will be created
+
+Problem 
+
+Imagine you have a logistic management application.
+The first version of it can only handle transportation by trucks, so the bulk of your application lives in Truck Class.
+
+After a while, you app becomes pretty popular and receive dozens of requests from sea transportation companies 
+to incorporate sea logistic into the app.
+
+At present your code is couple to the truck class. 
+Adding Ship class to the app would require making changes to the entire code base.
+Same would happen if in the future your decide to add another type of transportation.
+
+Solution
+
+The factor method pattern suggest that you replace direct object construction calls (using new operator) with calls 
+to a special factory method.
+The object still created via the new operator, but it's being called from within the factory method.
+Objects return by the factory method are often called Products.
+
+Limitation 
+
+Subclasses may return different types of products only if these products have a common base class interface.
+Also , the factory method in the base class have its return type declared as this interface
